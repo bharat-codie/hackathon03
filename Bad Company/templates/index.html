@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scope Global Skill University — Welcome</title>
+  <meta name="description" content="Scope Global Skill University - modern campus, programs, admissions, and student life." />
+  <style>
+    :root{
+      --bg:#0b1220; --card:#071428; --muted:#c9d8ff; --glass:rgba(255,255,255,0.03);
+      --accent1:#6d28d9; --accent2:#06b6d4; --accent-grad: linear-gradient(90deg,var(--accent1),var(--accent2));
+      --radius:12px; --chat-size:40px; --chat-btn-small:36px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:var(--muted);background:linear-gradient(180deg,#041028,#071033);}    
+    a{color:inherit}
+
+    .container{max-width:1200px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:58px;height:58px;border-radius:10px;background:var(--accent1);display:grid;place-items:center;color:#fff;font-weight:800;font-size:18px}
+    h1{margin:0;font-size:20px}
+    nav a{margin-left:18px;font-size:15px;color:rgba(255,255,255,0.85);text-decoration:none}
+
+    .hero{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:28px;margin-top:20px;display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center}
+    .hero-left h2{font-size:32px;margin:0 0 12px 0;color:#fff}
+    .hero-left p{margin:0 0 18px 0;color:rgba(255,255,255,0.75)}
+    .cta{display:inline-block;padding:12px 16px;border-radius:10px;background:var(--accent-grad);color:white;font-weight:700;text-decoration:none}
+
+    .hero-right{background:var(--card);padding:14px;border-radius:12px;border:1px solid var(--glass)}
+    .admit{font-size:14px;margin-bottom:8px}
+    .stat-grid{display:flex;gap:10px}
+    .stat{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:10px;text-align:center}
+
+    .section{margin-top:26px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:16px;border-radius:12px;border:1px solid var(--glass)}
+    .card h3{margin:0 0 8px 0;color:#fff}
+    .card p{margin:0;color:rgba(255,255,255,0.72);font-size:14px}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px;background:#0b1220}
+    .placeholder{display:grid;place-items:center;color:rgba(255,255,255,0.18);font-size:13px;border:1px dashed rgba(255,255,255,0.03)}
+
+    footer{margin-top:34px;padding:18px;text-align:center;color:rgba(255,255,255,0.6)}
+
+    .chat-toggle{position:fixed;right:18px;bottom:18px;width:var(--chat-size);height:var(--chat-size);border-radius:999px;background:var(--accent1);display:grid;place-items:center;color:white;box-shadow:0 8px 30px rgba(11,22,40,0.6);cursor:pointer;z-index:1200;border:3px solid rgba(255,255,255,0.04)}
+    .chat-toggle.small{width:var(--chat-btn-small);height:var(--chat-btn-small)}
+
+    .chat-window{position:fixed;right:18px;bottom:72px;width:340px;max-height:540px;background:linear-gradient(180deg,#071428,#051225);border-radius:12px;padding:10px;border:1px solid var(--glass);box-shadow:0 20px 60px rgba(2,6,23,0.6);z-index:1200;display:flex;flex-direction:column}
+    .chat-header{display:flex;align-items:center;justify-content:space-between;padding:6px 8px}
+    .chat-header .title{font-weight:700;color:#fff}
+    .chat-body{flex:1;overflow:auto;padding:8px;display:flex;flex-direction:column;gap:10px}
+    .bubble{max-width:78%;padding:10px 12px;border-radius:10px;line-height:1.35}
+    .bubble.bot{align-self:flex-start;background:rgba(255,255,255,0.02);color:var(--muted)}
+    .bubble.user{align-self:flex-end;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white}
+    .chat-input-row{display:flex;gap:8px;padding-top:8px}
+    .chat-input{flex:1;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:var(--muted);outline:none}
+    .chat-send{width:40px;height:36px;border-radius:8px;border:none;background:var(--accent1);color:white;cursor:pointer}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .chat-window{right:12px;left:12px;width:auto;bottom:82px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SG</div>
+        <div>
+          <h1>Scope Global Skill University</h1>
+          <div style="font-size:13px;color:rgba(255,255,255,0.6)">Empowering futures through practical skills</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#programs">Programs</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Real skills. Real impact.</h2>
+        <p>Join our hands-on programs in Technology, Business, and Design. Industry-aligned curriculum, expert mentors, and career support.</p>
+        <a class="cta" href="#admissions">Apply Now</a>
+      </div>
+
+      <div class="hero-right">
+        <div class="admit">Next intake: <strong>Jan 2026</strong></div>
+        <div class="stat-grid">
+          <div class="stat"><div style="font-size:18px;color:#fff">120+</div><div style="font-size:12px;color:rgba(255,255,255,0.6)">Courses</div></div>
+          <div class="stat"><div style="font-size:18px;color:#fff">15k</div><div style="font-size:12px;color:rgba(255,255,255,0.6)">Students</div></div>
+        </div>
+        <div style="margin-top:12px;font-size:13px;color:rgba(255,255,255,0.65)">Campus highlights</div>
+        <div style="display:flex;gap:10px;margin-top:10px">
+          <div style="flex:1;border-radius:8px;overflow:hidden"><img src="placeholder-campus-1.jpg" alt="campus" style="width:100%;height:86px;object-fit:cover;background:#0b1220" /></div>
+          <div style="flex:1;border-radius:8px;overflow:hidden"><img src="placeholder-campus-2.jpg" alt="lab" style="width:100%;height:86px;object-fit:cover;background:#0b1220" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="programs" class="section">
+      <h2 style="color:#fff">Programs</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Computer Science & AI</h3>
+          <p>Practical AI, machine learning, data engineering with real projects and internships.</p>
+        </div>
+        <div class="card">
+          <h3>Business & Entrepreneurship</h3>
+          <p>Startup fundamentals, product management, marketing and finance with mentor-led labs.</p>
+        </div>
+        <div class="card">
+          <h3>Design & Media</h3>
+          <p>UI/UX, motion design, and multimedia storytelling taught by industry pros.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2 style="color:#fff">Gallery</h2>
+      <div class="gallery">
+        <div class="placeholder"><img src="placeholder-1.jpg" alt="placeholder" style="width:100%;height:100%;object-fit:cover;border-radius:8px" onerror="this.parentElement.classList.add('placeholder');this.style.display='none'">Image 1</div>
+        <div class="placeholder"><img src="placeholder-2.jpg" alt="placeholder" style="width:100%;height:100%;object-fit:cover;border-radius:8px" onerror="this.parentElement.classList.add('placeholder');this.style.display='none'">Image 2</div>
+        <div class="placeholder"><img src="placeholder-3.jpg" alt="placeholder" style="width:100%;height:100%;object-fit:cover;border-radius:8px" onerror="this.parentElement.classList.add('placeholder');this.style.display='none'">Image 3</div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 style="color:#fff">Contact & Admissions</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Admissions Office</h3>
+          <p>Email: admissions@scope-edu.example | Phone: +91-XXXXXXXXXX</p>
+        </div>
+        <div class="card">
+          <h3>Visit Us</h3>
+          <p>123 Learning Lane, Knowledge City — drop by for a tour. (Replace this with your address.)</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © Scope Global Skill University — build your future. &nbsp; | &nbsp; <small>Template placeholder images are used here — replace with your own or generated images.</small>
+    </footer>
+  </div>
+
+  <div id="chatToggle" class="chat-toggle small" title="Chat with SG University">💬</div>
+
+  <div id="chatWindow" class="chat-window" style="display:none">
+    <div class="chat-header">
+      <div class="title">Chat with Admissions</div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="minimizeBtn" style="background:transparent;border:none;color:rgba(255,255,255,0.7);cursor:pointer">—</button>
+        <button id="closeBtn" style="background:transparent;border:none;color:rgba(255,255,255,0.7);cursor:pointer">✕</button>
+      </div>
+    </div>
+    <div id="chatBody" class="chat-body">
+      <div class="bubble bot">Hello! I'm the campus assistant. Ask me about programs, admissions, or campus life.</div>
+    </div>
+    <div class="chat-input-row">
+      <input id="chatInput" class="chat-input" placeholder="Type a message..." autocomplete="off" />
+      <button id="chatSend" class="chat-send" title="Send">➤</button>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = 'http://127.0.0.1:5000/api/chat';
+
+    const chatToggle = document.getElementById('chatToggle');
+    const chatWindow = document.getElementById('chatWindow');
+    const chatBody = document.getElementById('chatBody');
+    const chatInput = document.getElementById('chatInput');
+    const chatSend = document.getElementById('chatSend');
+    const minimizeBtn = document.getElementById('minimizeBtn');
+    const closeBtn = document.getElementById('closeBtn');
+
+    function openChat(){ chatWindow.style.display='flex'; chatToggle.style.display='none'; setTimeout(()=>{ chatInput.focus(); },50); }
+    function closeChat(){ chatWindow.style.display='none'; chatToggle.style.display='flex'; }
+    function minimizeChat(){ chatWindow.style.display='none'; chatToggle.style.display='flex'; }
+
+    chatToggle.addEventListener('click', ()=>{ openChat(); });
+    closeBtn.addEventListener('click', ()=>{ closeChat(); });
+    minimizeBtn.addEventListener('click', ()=>{ minimizeChat(); });
+
+    function escapeHtml(str){ const div = document.createElement('div'); div.textContent = str; return div.innerHTML; }
+
+    function appendBubble(role, text){ const d=document.createElement('div'); d.className='bubble '+role; const safe = escapeHtml(text).replace(/\n/g,'<br/>'); d.innerHTML = safe; chatBody.appendChild(d); chatBody.scrollTop = chatBody.scrollHeight; }
+
+    async function sendMessage(){ const t = chatInput.value.trim(); if(!t) return; appendBubble('user', t); chatInput.value=''; const typing = document.createElement('div'); typing.className='bubble bot'; typing.textContent = '...'; chatBody.appendChild(typing); chatBody.scrollTop = chatBody.scrollHeight;
+      try{
+        const res = await fetch(API_URL, {method:'POST',headers:{'Content-Type':'application/json'},body: JSON.stringify({message: t})});
+        const data = await res.json(); typing.remove(); if(data && data.reply) appendBubble('bot', data.reply); else if(data && data.error) appendBubble('bot', 'Error: '+data.error); else appendBubble('bot', 'No reply from server.');
+      }catch(err){ typing.remove(); appendBubble('bot', 'Network error: '+err.message+' — is the backend running?'); }
+    }
+
+    chatSend.addEventListener('click', ()=>{ sendMessage(); });
+    chatInput.addEventListener('keydown',(e)=>{ if(e.key === 'Enter'){ e.preventDefault(); sendMessage(); } });
+
+    document.addEventListener('click', (e)=>{
+      if(!chatWindow.contains(e.target) && !chatToggle.contains(e.target) && chatWindow.style.display==='flex'){
+        if(window.innerWidth < 800){ closeChat(); }
+      }
+    });
+
+    async function pingApi(){ try{ await fetch(API_URL, {method:'OPTIONS'}); }catch(e){} }
+    setInterval(pingApi, 8000);
+  </script>
+</body>
+</html>
