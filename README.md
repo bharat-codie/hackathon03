@@ -76,7 +76,7 @@ Your College Website + Chatbot will start running 🎉
 
 
 ```
-(showcase.jpg)
+[Screenshot] (showcase.jpg)
 ```
 
 ---
