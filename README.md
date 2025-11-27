@@ -76,7 +76,7 @@ Your College Website + Chatbot will start running 🎉
 
 
 ```
-![Project Screenshot](Screenshot_20251127_223032.jpg)
+(Screenshot_20251127_223032.jpg)
 ```
 
 ---
